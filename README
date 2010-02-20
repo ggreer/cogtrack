@@ -1,0 +1,5 @@
+CogTrack lets you track your cognitive abilities over time. Monitor and study the effectiveness of lifestyle changes on cognition.
+
+Directory layout:
+./ - umm... not much besides the README
+./cogtrack - web app stuff (Django)
