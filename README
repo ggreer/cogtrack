@@ -3,3 +3,13 @@ CogTrack lets you track your cognitive abilities over time. Monitor and study th
 Directory layout:
 ./ - umm... not much besides the README
 ./cogtrack - web app stuff (Django)
+
+Dependencies:
+Django
+
+To get a dev instance running:
+cd ./cogtrack
+vim/nano/whatever settings.py
+python manage.py syncdb         # Be sure to create an admin account if you want to use the admin pages.
+python manage.py runserver
+visit http://127.0.0.1:8000/ in your favorite browser

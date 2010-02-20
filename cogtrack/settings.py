@@ -1,5 +1,7 @@
 # Django settings for cogtrack project.
 
+# TODO: probably a good idea to split this into settings-dev.py and settings-prod.py
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -9,13 +11,22 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = ''           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = ''             # Or path to database file if using sqlite3.
+# Dev config using sqlite
+DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = '/Users/ggreer/cogtrack/cogtrack/cogtrack.db'  # devs: change this to whatever path you use. I am too lazy to not commit this.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
+# Production config using mysql
+#DATABASE_ENGINE = 'mysql'
+#DATABASE_NAME = 'cogtrack_production'
+#DATABASE_USER = 'cogtrack'
+#DATABASE_PASSWORD = ''       # Haha, no way am I putting this in a public repo
+#DATABASE_HOST = ''
+#DATABASE_PORT = ''
+                           
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -76,4 +87,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.admin',
+    'cogtrack.test_react_go_no_go',
 )
