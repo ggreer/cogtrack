@@ -30,6 +30,7 @@ class CogTest(models.Model):
 # Principle of maximum programmer laziness says go with the easier option, which is #2
 class GoNoGo(CogTest):
   reaction_time = models.PositiveIntegerField('Average reaction time in milliseconds')
+  # Do we want median reaction time too?
   tests = models.PositiveIntegerField('Number of tests')
   errors = models.PositiveIntegerField('Number of mistakes')
 
