@@ -8,18 +8,20 @@
 <body>
   <div id="header">
   {% block header %}
-  <img src="{{ MEDIA_URL }}logo_small.png" />
-  <p>
+  <div id="top_bar">
+    <span id="logo"><img alt="CogTrack" src="{{ MEDIA_URL }}logo_small.png" /></span>
+    <span id="top_right">
   {% if user.is_authenticated %}
     Hi {{ user.username }} <a href="/logout">Log out</a>
   {% else %}
     <a href="/login">Log in</a> or <a href="/signup">Sign up</a>
   {% endif %}
-  </p>
-  <p>
+    </span>
+  </div>
+  <div id="nav_bar">
     <a href="/">Main</a>
     <a href="/tests/">Tests</a>
-  </p>
+  </div>
   {% endblock %}
   </div>
   <div id="content">

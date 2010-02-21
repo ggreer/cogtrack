@@ -1,8 +1,10 @@
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}CogTrack - Tests - Go/No-go Reaction Time{% endblock %}
+ 
+{% block content %}
+<p>Go/No-go Reaction Time Test</p>
+<p><a href="/tests/go_no_go/test">Take the test</a></p>
 {% if results_list %}
   <table>
     <tr>
@@ -25,5 +27,4 @@
 {% else %}
   Empty!
 {% endif %}
-</body>
-</html>
+{% endblock %}

@@ -55,6 +55,10 @@ MEDIA_URL = 'http://127.0.0.1:8080/' #TODO: fixme. Right now I'm just running mo
 
 JQUERY_PATH = 'jquery-1.4.2.js' # TODO: logic to set this to jquery-1.4.2.min.js if we're in production mode
 
+LOGIN_URL = '/login'
+LOGOUT_URL = '/logout'
+LOGIN_REDIRECT_URL = '/'
+
 AUTH_PROFILE_MODULE = 'main.UserProfile'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
