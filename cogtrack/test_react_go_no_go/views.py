@@ -11,3 +11,10 @@ def index(request):
       'results_list': results_list,
   })
   return HttpResponse(template.render(context))
+
+def test(request):
+  template = loader.get_template('tests/go_no_go/test.html')
+  context = Context({
+      'user': request.user,
+  })
+  return HttpResponse(template.render(context))
