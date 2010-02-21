@@ -8,10 +8,11 @@ Directory layout:
 
 Dependencies:
 Django
+mongoose or something else that can serve up static files
 
 To get a dev instance running:
 cd ./cogtrack
 vim/nano/whatever settings.py
 python manage.py syncdb         # Be sure to create an admin account if you want to use the admin pages.
 python manage.py runserver
-visit http://127.0.0.1:8000/ in your favorite browser
+visit http://localhost:8000/ in your favorite browser

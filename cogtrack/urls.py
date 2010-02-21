@@ -5,14 +5,16 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^cogtrack/', include('cogtrack.foo.urls')),
-    (r'^test/$', 'cogtrack.test_react_go_no_go.views.index'),
+  (r'^$', 'cogtrack.main.views.index'), # Empty path, show main page.
+  (r'^test/$', 'cogtrack.test_react_go_no_go.views.index'),
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+  (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
+  (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
 
-    # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+  # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
+  # to INSTALLED_APPS to enable admin documentation:
+  # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+  
+  # Uncomment the next line to enable the admin:
+  (r'^admin/', include(admin.site.urls)),
 )

@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>{% block title %}CogMon{% endblock %}</title>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}/style.css" />
+  <script type="text/javascript" src="{{ MEDIA_URL }}{{ JQUERY_PATH }}">
+  </script>
+</head>
+<body>
+  <div id="header">
+  {% block header %}
+    <a href="/">Main</a>
+    <a href="/test/">Tests</a>
+  {% endblock %}
+  </div>
+  <div id="content">
+      {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
