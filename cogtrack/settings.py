@@ -97,5 +97,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+    'cogtrack.cogtest',
+    'cogtrack.main',
     'cogtrack.test_react_go_no_go',
 )

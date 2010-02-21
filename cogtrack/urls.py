@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
   (r'^$', 'cogtrack.main.views.index'), # Empty path, show main page.
-  (r'^tests/$', 'cogtrack.main.views.tests_index'),
+  (r'^tests/$', 'cogtrack.cogtest.views.index'),
   (r'^tests/go_no_go$', 'cogtrack.test_react_go_no_go.views.index'),
   (r'^tests/go_no_go/test$', 'cogtrack.test_react_go_no_go.views.test'),
 

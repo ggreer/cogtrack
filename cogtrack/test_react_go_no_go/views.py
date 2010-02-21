@@ -1,9 +1,8 @@
-# Create your views here.
-
 from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django.shortcuts import render_to_response
 
+from cogtrack.cogtest.models import CogTest
 from cogtrack.test_react_go_no_go.models import GoNoGo
 
 def index(request):
