@@ -8,8 +8,17 @@
 <body>
   <div id="header">
   {% block header %}
+  <p>
+  {% if user.is_authenticated %}
+    Hi {{ user.username }} <a href="/logout">Log out</a>
+  {% else %}
+    <a href="/login">Log in</a> or <a href="/signup">Sign up</a>
+  {% endif %}
+  </p>
+  <p>
     <a href="/">Main</a>
-    <a href="/test/">Tests</a>
+    <a href="/tests/">Tests</a>
+  </p>
   {% endblock %}
   </div>
   <div id="content">

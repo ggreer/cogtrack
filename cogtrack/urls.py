@@ -6,10 +6,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
   (r'^$', 'cogtrack.main.views.index'), # Empty path, show main page.
-  (r'^test/$', 'cogtrack.test_react_go_no_go.views.index'),
+  (r'^tests/$', 'cogtrack.main.views.tests_index'),
+  (r'^tests/go_no_go$', 'cogtrack.test_react_go_no_go.views.index'),
 
-  (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
-  (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
+  (r'^signup$', 'cogtrack.main.views.signup'),
+  (r'^login$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
+  (r'^logout$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
 
   # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
   # to INSTALLED_APPS to enable admin documentation:

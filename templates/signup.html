@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Sign up!{% endblock %}
+
+{% block content %}
+  <h1>Sign up</h1>
+  <form action="." method="post">
+    {% if form.error_dict %}
+      <p class="error"><a href="http://en.wikipedia.org/wiki/User_error">PEBKAC</a></p>
+    {% endif %}
+
+    {% if form.username.errors %}
+      {{ form.username.html_error_list }}
+    {% endif %}
+    <label for="id_username">Username</label> {{ form.username }}
+
+    {% if form.password1.errors %}
+      {{ form.password1.html_error_list }}
+    {% endif %}
+    <label for="id_password1">Password</label> {{ form.password1 }}
+
+    {% if form.password2.errors %}
+      {{ form.password2.html_error_list }}
+    {% endif %}
+    <label for="id_password2">Type your password again!</label> {{ form.password2 }}
+
+    <input type="submit" value="!" />
+  </label>
+{% endblock %}
