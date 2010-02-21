@@ -14,10 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="cogtrack_logo.svg"
-   inkscape:export-filename="/Users/ggreer/Desktop/cogtrack_logo_sm.png"
-   inkscape:export-xdpi="39.958378"
-   inkscape:export-ydpi="39.958378">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/ggreer/Desktop/logo.png"
+   inkscape:export-xdpi="88.22744"
+   inkscape:export-ydpi="88.22744">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -36,14 +36,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.86"
-     inkscape:cx="304.92938"
+     inkscape:cx="228.18519"
      inkscape:cy="786.85872"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1031"
-     inkscape:window-height="738"
-     inkscape:window-x="72"
+     inkscape:window-width="1230"
+     inkscape:window-height="756"
+     inkscape:window-x="50"
      inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
@@ -63,12 +63,16 @@
      id="layer2"
      inkscape:label="Layer">
     <rect
-       style="fill:#999999;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke:none;stroke-opacity:1"
+       style="fill:#333333;stroke:none"
        id="rect2839"
-       width="558.13953"
+       width="556.97675"
        height="13.953488"
        x="76.744186"
-       y="307.01334" />
+       y="316.31567" />
+    <path
+       style="fill:#333333;stroke:#333333;stroke-width:11.888;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:11.888,11.888;stroke-dashoffset:0"
+       d="m 76.731949,315.15288 c 557.001221,0 557.001221,0 557.001221,0"
+       id="path3672" />
   </g>
   <g
      inkscape:label="Layer 1"
@@ -91,7 +95,7 @@
      inkscape:label="Layer 2">
     <path
        sodipodi:type="arc"
-       style="fill:#999999;stroke-width:19.89999999999999858;stroke-miterlimit:4;stroke-dasharray:9.94999999999999929, 9.94999999999999929;stroke:#999999;stroke-opacity:1;stroke-dashoffset:0;stroke-linecap:butt;stroke-linejoin:miter;fill-opacity:1"
+       style="fill:#333333;stroke-width:19.89999999999999858;stroke-miterlimit:4;stroke-dasharray:9.94999999999999929, 9.94999999999999929;stroke:#333333;stroke-opacity:1;stroke-dashoffset:0;stroke-linecap:butt;stroke-linejoin:miter;fill-opacity:1"
        id="path2837"
        sodipodi:cx="206.97675"
        sodipodi:cy="268.64127"

@@ -1,13 +1,14 @@
 <html>
 <head>
   <title>{% block title %}CogMon{% endblock %}</title>
-  <link rel="stylesheet" href="{{ MEDIA_URL }}/style.css" />
+  <link rel="stylesheet" href="{{ MEDIA_URL }}style.css" />
   <script type="text/javascript" src="{{ MEDIA_URL }}{{ JQUERY_PATH }}">
   </script>
 </head>
 <body>
   <div id="header">
   {% block header %}
+  <img src="{{ MEDIA_URL }}logo_small.png" />
   <p>
   {% if user.is_authenticated %}
     Hi {{ user.username }} <a href="/logout">Log out</a>

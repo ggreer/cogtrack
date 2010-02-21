@@ -5,25 +5,16 @@ from django.template import Context, loader
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-#from django import oldforms as forms
 from django.http import HttpResponseRedirect
+from django.template import RequestContext 
 from django.shortcuts import render_to_response
 from django.contrib.auth.forms import UserCreationForm
 
-
 def index(request):
-  template = loader.get_template('index.html')
-  context = Context({
-      'user': request.user,
-  })
-  return HttpResponse(template.render(context))
+  return render_to_response('index.html', {}, context_instance = RequestContext(request))
 
 def tests_index(request):
-  template = loader.get_template('tests/index.html')
-  context = Context({
-      'user': request.user,
-  })
-  return HttpResponse(template.render(context))
+  return render_to_response('index.html', {}, context_instance = RequestContext(request))
 
 def signup(request):
   form = UserCreationForm()
