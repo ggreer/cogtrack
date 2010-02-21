@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+{% if results_list %}
+  <table>
+    <tr>
+      <th>Average reaction time</th>
+      <th>Number of tests</th>
+      <th>Number of mistakes</th>
+      <th>Start time</th>
+      <th>Finish time</th>
+    </tr>
+  {% for result in results_list %}
+    <tr>
+      <td>{{ result.reaction_time }}</td>
+      <td>{{ result.tests }}</td>
+      <td>{{ result.errors }}</td>
+      <td>{{ result.start }}</td>
+      <td>{{ result.end }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% else %}
+  Empty!
+{% endif %}
+</body>
+</html>
