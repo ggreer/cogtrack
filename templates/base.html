@@ -2,8 +2,10 @@
 <head>
   <title>{% block title %}CogMon{% endblock %}</title>
   <link rel="stylesheet" href="{{ MEDIA_URL }}style.css" />
-  <script type="text/javascript" src="{{ MEDIA_URL }}{{ JQUERY_PATH }}">
+  <script type="text/javascript" src="{{ MEDIA_URL }}jquery.js">
   </script>
+  {% block extra_head %}
+  {% endblock %}
 </head>
 <body>
   <div id="header">
