@@ -4,6 +4,10 @@
   background: #ccc;
 }
 
+#test_log {
+  background: #eee;
+}
+
 #go_no_go_image {
   width: 250px;
   height: 250px;

@@ -5,13 +5,18 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{{ MEDIA_URL }}go_no_go.css" />
 <script type="text/javascript">
+var cleanup;
+var reaction_times = new Array();
+var errors = 0;
 </script>
 {% endblock %}
 
 {% block content %}
 <div id="test_go_no_go">
-  <button>Show it</button>
+  <button>Start</button>
+  <p>
   <div id="go_no_go_image"></div>
+  </p>
   <div id="test_log"></div>
 </div>
 <script type="text/javascript">
@@ -20,7 +25,7 @@ function react_start() {
   $("#go_no_go_image").empty();
   wait_time = 3000 + (Math.random() * 5000); //Show image somewhere between 3 and 8 seconds after user hits button
   wait_time = 100;
-  window.setTimeout(show_image, wait_time);
+  setTimeout(show_image, wait_time);
 }
 
 function react_stop() {
@@ -28,16 +33,18 @@ function react_stop() {
   stop = now.getTime();
   reaction_time = stop - start;
   $("#test_log").append("Reaction time: " + reaction_time + " milliseconds<br />");
+  reaction_times.push(reaction_time);
   react_cleanup();
 }
 
-
 function react_error() {
-  $("#test_log").append("you fool! you foolish fool!<br />");
+  $("#test_log").append("You fool! You foolish fool!<br />");
+  errors += 1;
   react_cleanup();
 }
 
 function react_cleanup() {
+  clearTimeout(cleanup);
   $("#go_no_go_image").removeClass("go");
   $("#go_no_go_image").removeClass("no_go");
   $("#go_no_go_image").append("Press spacebar to start.");
@@ -56,6 +63,7 @@ function show_image() {
   else {
     $("#go_no_go_image").addClass("no_go");
     $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_error(); });
+    cleanup = setTimeout(react_cleanup, 2000);
   }
 }
 
