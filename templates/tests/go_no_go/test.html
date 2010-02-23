@@ -5,10 +5,61 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{{ MEDIA_URL }}go_no_go.css" />
 <script type="text/javascript">
-
 </script>
 {% endblock %}
 
 {% block content %}
-<div id=""></div>
+<div id="test_go_no_go">
+  <button>Show it</button>
+  <div id="go_no_go_image"></div>
+  <div id="test_log"></div>
+</div>
+<script type="text/javascript">
+function react_start() {
+  $("body").unbind('keydown.react');
+  $("#go_no_go_image").empty();
+  wait_time = 3000 + (Math.random() * 5000); //Show image somewhere between 3 and 8 seconds after user hits button
+  wait_time = 100;
+  window.setTimeout(show_image, wait_time);
+}
+
+function react_stop() {
+  now = new Date();
+  stop = now.getTime();
+  reaction_time = stop - start;
+  $("#test_log").append("Reaction time: " + reaction_time + " milliseconds<br />");
+  react_cleanup();
+}
+
+
+function react_error() {
+  $("#test_log").append("you fool! you foolish fool!<br />");
+  react_cleanup();
+}
+
+function react_cleanup() {
+  $("#go_no_go_image").removeClass("go");
+  $("#go_no_go_image").removeClass("no_go");
+  $("#go_no_go_image").append("Press spacebar to start.");
+  $("body").unbind('keydown.react');
+  $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_start(); });
+}
+
+function show_image() {
+  now = new Date();
+  start = now.getTime();
+
+  if(Math.floor(Math.random() * 2) > 0) {
+    $("#go_no_go_image").addClass("go");
+    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_stop(); });
+  }
+  else {
+    $("#go_no_go_image").addClass("no_go");
+    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_error(); });
+  }
+}
+
+$("button").click(react_start);
+$("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_start(); });
+</script>
 {% endblock %}

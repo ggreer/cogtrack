@@ -1,0 +1,21 @@
+#test_go_no_go {
+  width: 600px;
+  height: 400px;
+  background: #ccc;
+}
+
+#go_no_go_image {
+  width: 250px;
+  height: 250px;
+}
+
+#go_no_go_image.ready {
+}
+
+#go_no_go_image.go {
+  background: #0c0;
+}
+
+#go_no_go_image.no_go {
+  background: #c00;
+}
