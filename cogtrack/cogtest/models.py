@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # TODO: think of a better naming scheme or something
 COG_TESTS = (
@@ -15,6 +16,7 @@ COG_TESTS = (
 )
 
 class CogTest(models.Model):
+  user = models.ForeignKey(User, null = False)
   name = models.CharField(max_length = 10, choices = COG_TESTS) # An enum is a better choice. deal with this later
   start = models.DateTimeField('time test started')
   end = models.DateTimeField('time test ended')
