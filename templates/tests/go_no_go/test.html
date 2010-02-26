@@ -13,13 +13,16 @@ var errors = 0;
 
 {% block content %}
 <div id="test_go_no_go">
-  <button>Start</button>
+  <button id="start_button">Start</button>
   <p>
   <div id="go_no_go_image"></div>
   </p>
+  <button id="submit_button">Submit</button>
   <div id="test_log"></div>
 </div>
 <script type="text/javascript">
+//TODO: One day I bet these functions will rhyme with functions in other tests. It would be a good idea to eliminate repetition.
+
 function react_start() {
   $("body").unbind('keydown.react');
   $("#go_no_go_image").empty();
@@ -67,7 +70,12 @@ function show_image() {
   }
 }
 
-$("button").click(react_start);
+function submit_scores() {
+  
+}
+
+$("#start_button").click(react_start);
+$("#submit_button").click(submit_scores);
 $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_start(); });
 </script>
 {% endblock %}

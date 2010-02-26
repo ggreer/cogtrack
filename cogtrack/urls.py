@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
+from django.conf import settings
 
-# Uncomment the next two lines to enable the admin:
+# Enable admin interface
 from django.contrib import admin
 admin.autodiscover()
 
@@ -21,3 +22,11 @@ urlpatterns = patterns('',
   # Uncomment the next line to enable the admin:
   (r'^admin/', include(admin.site.urls)),
 )
+
+# Allow Django to serve static files so that mongoose isn't needed for development
+if settings.LOCAL_DEVELOPMENT:
+    urlpatterns += patterns("django.views",
+        url(r"%s(?P<path>.*)/$" % settings.MEDIA_URL[1:], "static.serve", {
+            "document_root": settings.MEDIA_ROOT,
+        })
+    )

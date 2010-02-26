@@ -1,4 +1,4 @@
-CogTrack lets you track your cognitive abilities over time. Monitor and study the effectiveness of lifestyle changes on cognition.
+CogTrack lets you track your cognitive abilities over time. With this information you can monitor and study the effectiveness of lifestyle changes on cognition.
 
 Directory layout:
 ./            umm... not much besides the README
@@ -8,7 +8,6 @@ Directory layout:
 
 Dependencies:
 Django
-mongoose or something else that can serve up static files
 
 To get a dev instance running:
 cd ./cogtrack

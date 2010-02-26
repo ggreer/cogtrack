@@ -22,7 +22,7 @@ def index(request):
 
   max_reaction_time = math.ceil(float(max_reaction_time)/100) * 100
   chart_url += data_string[:-1]
-  chart_url += "&chds=0,%u&chxr=1,0,%u&chxl=0:|2009|2010|2:|Milliseconds&chxp=0,5|2,50" % (max_reaction_time, max_reaction_time)
+  chart_url += "&chds=0,%u&chxr=1,0,%u&chxl=0:|History|2:|Milliseconds&chxp=0,5|2,50" % (max_reaction_time, max_reaction_time)
   chart_urls.append(chart_url)
 
   data_string = ""
@@ -44,3 +44,7 @@ def index(request):
 
 def test(request):
   return render_to_response('tests/go_no_go/test.html', {}, context_instance = RequestContext(request))
+
+#def save(request):
+#  
+#  return render_to_response('tests/go_no_go/saved.html', {}, context_instance = RequestContext(request))

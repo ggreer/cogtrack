@@ -51,9 +51,10 @@ MEDIA_ROOT = '/Users/ggreer/cogtrack/static/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://127.0.0.1:8080/' #TODO: fixme. Right now I'm just running mongoose to serve up cogtrack/static/
+MEDIA_URL = '/static/' #TODO: fixme. Right now I'm just running mongoose to serve up cogtrack/static/
 
-JQUERY_PATH = 'jquery-1.4.2.js' # TODO: logic to set this to jquery-1.4.2.min.js if we're in production mode
+# Set this to false in production
+LOCAL_DEVELOPMENT = True
 
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
