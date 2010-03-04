@@ -9,11 +9,14 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
+#COGTRACK_FOLDER="/Users/mike/workspace/cogtrack/"
+COGTRACK_FOLDER="/Users/ggreer/cogtrack/"
+
 MANAGERS = ADMINS
 
 # Dev config using sqlite
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = '/Users/ggreer/cogtrack/cogtrack/cogtrack.db'  # devs: change this to whatever path you use. I am too lazy to not commit this.
+DATABASE_NAME = COGTRACK_FOLDER+'cogtrack.db'  # devs: change this to whatever path you use. I am too lazy to not commit this.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -46,7 +49,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/Users/ggreer/cogtrack/static/'
+MEDIA_ROOT = COGTRACK_FOLDER+'static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -89,7 +92,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/ggreer/cogtrack/templates/"
+    COGTRACK_FOLDER+"templates/"
 )
 
 INSTALLED_APPS = (
