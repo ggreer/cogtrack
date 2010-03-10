@@ -6,12 +6,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-  (r'^$', 'cogtrack.main.views.index'), # Empty path, show main page.
-  (r'^tests/$', 'cogtrack.cogtest.views.index'),
-  (r'^tests/go_no_go$', 'cogtrack.test_react_go_no_go.views.index'),
-  (r'^tests/go_no_go/test$', 'cogtrack.test_react_go_no_go.views.test'),
+  (r'^$', 'webapp.main.views.index'), # Empty path, show main page.
+  (r'^tests/$', 'webapp.cogtest.views.index'),
+  (r'^tests/go_no_go$', 'webapp.test_react_go_no_go.views.index'),
+  (r'^tests/go_no_go/test$', 'webapp.test_react_go_no_go.views.test'),
 
-  (r'^signup$', 'cogtrack.main.views.signup'),
+  (r'^signup$', 'webapp.main.views.signup'),
   (r'^login$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
   (r'^logout$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
 
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
   # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
   
   # Uncomment the next line to enable the admin:
-  (r'^admin/', include(admin.site.urls)),
+#  (r'^admin/', include(admin.site.urls)),
 )
 
 # Allow Django to serve static files so that mongoose isn't needed for development

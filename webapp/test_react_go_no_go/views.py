@@ -4,8 +4,8 @@ from django.shortcuts import render_to_response
 
 import math
 
-from cogtrack.cogtest.models import CogTest
-from cogtrack.test_react_go_no_go.models import GoNoGo
+from webapp.cogtest.models import CogTest
+from webapp.test_react_go_no_go.models import GoNoGo
 
 def index(request):
   results_list = GoNoGo.objects.all().order_by('end')[:10]

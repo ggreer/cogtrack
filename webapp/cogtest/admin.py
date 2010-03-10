@@ -1,4 +1,4 @@
 from django.contrib import admin
-from cogtrack.cogtest.models import CogTest
+from webapp.cogtest.models import CogTest
 
 admin.site.register(CogTest)

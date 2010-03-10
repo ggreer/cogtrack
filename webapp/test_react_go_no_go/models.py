@@ -1,6 +1,6 @@
 from django.db import models
 
-from cogtrack.cogtest.models import CogTest
+from webapp.cogtest.models import CogTest
 
 # There are two ways to do this:
 # 1. Include all data

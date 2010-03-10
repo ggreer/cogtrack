@@ -1,4 +1,4 @@
-# Django settings for cogtrack project.
+# Django settings for cogtrack
 
 #DEBUG = True
 #TEMPLATE_DEBUG = DEBUG
@@ -72,13 +72,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'cogtrack.urls'
+ROOT_URLCONF = 'webapp.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/ggreer/cogtrack/templates/"
+    "/var/www/cogtrack/templates/"
 )
 
 INSTALLED_APPS = (
@@ -87,14 +87,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'cogtrack.cogtest',
-    'cogtrack.main',
-    'cogtrack.test_react_go_no_go',
+    'webapp.cogtest',
+    'webapp.main',
+    'webapp.test_react_go_no_go',
 )
 
-# Create a local_settings.py with your personal settings. 
+# Copy default_local_settings.py to local_settings.py and edit accordingly
 # local_settings.py is in the .gitignore so you don't have to worry about committing silly stuff
 try:
-  from local_settings import *
+  from local_settings import * # Warning, syntax errors in local_settings.py will be squelched
 except:
   pass
