@@ -5,7 +5,7 @@ COGTRACK_FOLDER="/Users/username/cogtrack/"
 
 # Dev config using sqlite
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = COGTRACK_FOLDER + 'cogtrack.db'  # devs: change this to whatever path you use.
+DATABASE_NAME = COGTRACK_FOLDER + 'webapp/cogtrack.db'  # devs: change this to whatever path you use.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
