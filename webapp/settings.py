@@ -1,9 +1,7 @@
 # Django settings for cogtrack project.
 
-# TODO: probably a good idea to split this into settings-dev.py and settings-prod.py
-
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+#DEBUG = True
+#TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -11,21 +9,13 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# Dev config using sqlite
-DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = '/Users/ggreer/cogtrack/cogtrack/cogtrack.db'  # devs: change this to whatever path you use. I am too lazy to not commit this.
-DATABASE_USER = ''             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
-
 # Production config using mysql
-#DATABASE_ENGINE = 'mysql'
-#DATABASE_NAME = 'cogtrack_production'
-#DATABASE_USER = 'cogtrack'
-#DATABASE_PASSWORD = ''       # Haha, no way am I putting this in a public repo
-#DATABASE_HOST = ''
-#DATABASE_PORT = ''
+DATABASE_ENGINE = 'mysql'
+DATABASE_NAME = 'cogtrack_production'
+DATABASE_USER = 'cogtrack'
+DATABASE_PASSWORD = ''       # Haha, no way am I putting this in a public repo
+DATABASE_HOST = ''
+DATABASE_PORT = ''
                            
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -46,15 +36,14 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/Users/ggreer/cogtrack/static/'
+MEDIA_ROOT = '/var/www/cogtrack/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/static/' #TODO: fixme. Right now I'm just running mongoose to serve up cogtrack/static/
 
-# Set this to false in production
-LOCAL_DEVELOPMENT = True
+LOCAL_DEVELOPMENT = False
 
 LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
@@ -102,3 +91,10 @@ INSTALLED_APPS = (
     'cogtrack.main',
     'cogtrack.test_react_go_no_go',
 )
+
+# Create a local_settings.py with your personal settings. 
+# local_settings.py is in the .gitignore so you don't have to worry about committing silly stuff
+try:
+  from local_settings import *
+except:
+  pass
