@@ -10,6 +10,7 @@ from cogtrack.test_react_go_no_go.models import GoNoGo
 def index(request):
   results_list = GoNoGo.objects.all().order_by('end')[:10]
 
+  #TODO: hard-coded google chart urls are bad. throw these in a config
   chart_urls = []
   max_reaction_time = 0
   data_string = ""
@@ -45,6 +46,15 @@ def index(request):
 def test(request):
   return render_to_response('tests/go_no_go/test.html', {}, context_instance = RequestContext(request))
 
-#def save(request):
-#  
-#  return render_to_response('tests/go_no_go/saved.html', {}, context_instance = RequestContext(request))
+def save(request):
+  form = GoNoGoForm()
+
+  if request.method == 'POST':
+    data = request.POST.copy()
+
+    if form.is_valid():
+      new_user = form.save()
+    else:
+      form = GoNoGoForm()
+
+  return render_to_response('tests/go_no_go/saved.html', {}, context_instance = RequestContext(request))
