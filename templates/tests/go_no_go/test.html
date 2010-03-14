@@ -52,7 +52,7 @@ function react_cleanup() {
   $("#go_no_go_image").removeClass("no_go");
   $("#go_no_go_image").append("Press spacebar to start.");
   $("body").unbind('keydown.react');
-  $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_start(); });
+  $("body").bind('keydown.react', function(){ if(event.keyCode == 32) {react_start(); event.preventDefault();}});
 }
 
 function show_image() {
@@ -61,11 +61,11 @@ function show_image() {
 
   if(Math.floor(Math.random() * 2) > 0) {
     $("#go_no_go_image").addClass("go");
-    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_stop(); });
+    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) {react_stop(); event.preventDefault();}});
   }
   else {
     $("#go_no_go_image").addClass("no_go");
-    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_error(); });
+    $("body").bind('keydown.react', function(){ if(event.keyCode == 32) {react_error(); event.preventDefault();}});
     cleanup = setTimeout(react_cleanup, 2000);
   }
 }
@@ -76,6 +76,6 @@ function submit_scores() {
 
 $("#start_button").click(react_start);
 $("#submit_button").click(submit_scores);
-$("body").bind('keydown.react', function(){ if(event.keyCode == 32) react_start(); });
+$("body").bind('keydown.react', function(){ if(event.keyCode == 32) {react_start(); event.preventDefault();}});
 </script>
 {% endblock %}
